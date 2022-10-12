@@ -15,3 +15,16 @@ add_custom_command(
         TARGET pidc_tests
         COMMAND pidc_tests
         )
+
+add_executable(pidc_sim
+        pidc_sim.c
+        )
+target_link_libraries(pidc_sim
+        PRIVATE
+        pidc
+        )
+target_compile_options(pidc_sim
+        PRIVATE
+        -Wall
+        -Werror
+        )
