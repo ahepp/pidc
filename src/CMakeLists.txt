@@ -1,0 +1,11 @@
+add_library(pidc
+        pidc.c
+        )
+target_include_directories(pidc
+        PUBLIC
+        ${PROJECT_SOURCE_DIR}/include
+        )
+target_compile_options(pidc
+        PRIVATE
+        -Wall
+        )
