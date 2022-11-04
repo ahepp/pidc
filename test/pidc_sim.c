@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
     int32_t kd = atoi(argv[3]);
 
     pidc_t *pidc;
-    pidc_create(&pidc, kp, ki, kd);
+    pidc_init(&pidc, kp, ki, kd);
     while (1) {
         int32_t e;
         scanf("%d", &e);

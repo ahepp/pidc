@@ -12,7 +12,7 @@ void gain_after_iter() {
     int32_t kp = 5;
     int32_t ki = 8;
     int32_t kd = 2;
-    pidc_create(&pidc, kp, ki, kd);
+    pidc_init(&pidc, kp, ki, kd);
 
     int32_t gain = pidc_update(pidc, -100);
 
@@ -25,7 +25,7 @@ void gain_after_two_iter() {
     int32_t kp = 5;
     int32_t ki = 8;
     int32_t kd = 2;
-    pidc_create(&pidc, kp, ki, kd);
+    pidc_init(&pidc, kp, ki, kd);
 
     pidc_update(pidc, -100);
     int32_t gain = pidc_update(pidc, -100);

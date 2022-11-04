@@ -3,7 +3,7 @@
 #include "pidc.h"
 #include "pidc_internal.h"
 
-void pidc_create(pidc_t **pidc_ptr, int32_t kp, int32_t ki, int32_t kd) {
+void pidc_init(pidc_t **pidc_ptr, int32_t kp, int32_t ki, int32_t kd) {
     pidc_t *pidc = (pidc_t *) malloc(sizeof(pidc_t));
     *pidc_ptr = pidc;
     pidc->kp = kp;
