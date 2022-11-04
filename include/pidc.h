@@ -1,7 +1,7 @@
 #ifndef PIDC_H
 #define PIDC_H
 
-#include "stdint.h"
+#include <stdint.h>
 
 typedef struct pidc_t pidc_t;
 
