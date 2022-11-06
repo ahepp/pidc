@@ -9,3 +9,5 @@ target_compile_options(pidc
         PRIVATE
         -Wall
         )
+
+install(TARGETS pidc DESTINATION lib)
