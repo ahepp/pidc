@@ -13,6 +13,10 @@ void pidc_init(pidc_t **pidc_ptr, int32_t kp, int32_t ki, int32_t kd) {
     pidc->total_e = 0;
 }
 
+void pidc_destroy(pidc_t *const pidc) {
+    free(pidc);
+}
+
 int32_t pidc_update(pidc_t *const pidc, int32_t e) {
     pidc->total_e += e;
 
