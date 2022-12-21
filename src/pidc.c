@@ -6,11 +6,13 @@
 void pidc_init(pidc_t **pidc_ptr, int32_t kp, int32_t ki, int32_t kd) {
     pidc_t *pidc = (pidc_t *) malloc(sizeof(pidc_t));
     *pidc_ptr = pidc;
+
     pidc->kp = kp;
     pidc->ki = ki;
     pidc->kd = kd;
     pidc->last_e = 0;
     pidc->total_e = 0;
+    pidc->init = 1;
 }
 
 void pidc_destroy(pidc_t *const pidc) {
@@ -18,6 +20,10 @@ void pidc_destroy(pidc_t *const pidc) {
 }
 
 int32_t pidc_update(pidc_t *const pidc, int32_t e) {
+    if (pidc->init) {
+        pidc->last_e = e;
+        pidc->init = 0;
+    }
     pidc->total_e += e;
 
     int32_t p_gain = pidc->kp * e;

@@ -7,6 +7,7 @@ struct pidc_t {
     int32_t kd;
     int32_t total_e;
     int32_t last_e;
+    int init;
 };
 
 #endif // PIDC_INTERNAL_H
